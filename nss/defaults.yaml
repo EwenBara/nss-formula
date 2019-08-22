@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+nss:
+  databases:
+    - passwd:
+      - files
+      - mymachines
+      - systemd
+    - group:
+      - files
+      - mymachines
+      - systemd
+    - shadow:
+      - files
+    - publickey: files
+    - hosts: files mymachines myhostname resolve [!UNAVAIL=return] dns
+    - networks: files
+    - protocols: files
+    - services: files
+    - ethers: files
+    - rpc: files
+    - netgroup: files
