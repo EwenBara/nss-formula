@@ -138,7 +138,7 @@ suites:
       state_top:
         base:
           '*':
-            - nss
+            - nss.config
       pillars:
         top.sls:
           base:
