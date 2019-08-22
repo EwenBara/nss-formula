@@ -1,0 +1,16 @@
+########################################################################
+# File managed by Salt at <{{ source }}>.
+# Your changes will be overwritten.
+########################################################################
+
+# Name Service Switch configuration file.
+# See nsswitch.conf(5) for details.
+
+{% for database in nss.databases %}
+{%- set key, values = database.items()[0] -%}
+{%- if values | is_list -%}
+{{ key }}: {{ values | join(' ') }}
+{%- else -%}
+{{ key }}: {{ values }}
+{%- endif %}
+{% endfor %}
